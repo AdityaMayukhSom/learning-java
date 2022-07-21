@@ -1,24 +1,26 @@
 import java.util.Scanner;
 
 public class CodingExercise42 {
-    public static void main(String[] args) {
+    private static Scanner scanner = new Scanner(System.in);
 
+    public static void main(String[] args) {
+        System.out.print("Enter Number Of Elements In Array: ");
+        int n = readInteger();
+        int[] arr = readElements(n);
+        System.out.println("The Minimum Value In Array Is " + findMin(arr));
     }
 
     private static int readInteger() {
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        scanner.close();
-        return n;
+        int num = scanner.nextInt();
+        scanner.nextLine();
+        return num;
     }
 
     private static int[] readElements(int n) {
-        Scanner scanner = new Scanner(System.in);
         int[] array = new int[n];
         for (int i = 0; i < n; i++) {
             array[i] = scanner.nextInt();
         }
-        scanner.close();
         return array;
     }
 
@@ -31,4 +33,5 @@ public class CodingExercise42 {
         }
         return min;
     }
+
 }
