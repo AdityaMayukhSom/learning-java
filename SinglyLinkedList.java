@@ -1,19 +1,21 @@
 public class SinglyLinkedList {
     public static void main(String[] args) {
-        int count = 6;
+        // int count = 6;
         LinkedList linkedList = new LinkedList();
-        for (int i = 1; i <= count; i++) {
-            linkedList.addNode(new Node(i * 10));
-        }
+        // for (int i = 1; i <= count; i++) {
+        // linkedList.addNode(new Node(i * 10));
+        // }
 
+        // linkedList.printList();
+
+        // for (int i = count; i >= 1; i--) {
+        // Node newNode = new Node((10 * i) + 5);
+        // linkedList.addNode(i, newNode);
+        // }
+        // linkedList.printList();
+
+        linkedList.addNode(new Node(2));
         linkedList.printList();
-
-        for (int i = count; i >= 1; i--) {
-            Node newNode = new Node((10 * i) + 5);
-            linkedList.addNode(i, newNode);
-        }
-        linkedList.printList();
-
     }
 }
 
@@ -68,12 +70,18 @@ class LinkedList {
 
     public void addNode(Node newNode) {
         // in case of adding node, we will check if the headnode point to any node
-        // if not add newNode to headnode
+        // if not add newNode to headnode otherwise add newnode to last node
         Node currNode = headPointer;
         while (currNode.next() != null) {
             currNode = currNode.next();
         }
         currNode.setNextNode(newNode);
+    }
+
+    public void addNodeStart(Node newNode) {
+        // in case of adding node, we will check if the headnode point to any node
+        // if not add newNode to headnode
+        this.addNode(0, newNode);
     }
 
     /**
